@@ -1,0 +1,30 @@
+﻿@model IEnumerable<BuyTogether.Core.Entities.Product>
+
+<h2>Products</h2>
+
+<a class="btn btn-primary" href="/Admin/Products/Create">Add New Product</a>
+
+<table class="table table-bordered mt-3">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Title</td>
+                <td>@item.IndividualPrice</td>
+                <td>@item.Category?.Name</td>
+                <td>
+                    <a href="/Admin/Products/Edit/@item.Id" class="btn btn-sm btn-warning">Edit</a>
+                    <a href="/Admin/Products/Delete/@item.Id" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

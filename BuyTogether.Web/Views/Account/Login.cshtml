@@ -1,0 +1,17 @@
+﻿@model BuyTogether.Web.ViewModels.LoginVM
+
+<h2>Login</h2>
+
+<form method="post">
+    <label>Email</label>
+    <input asp-for="Email" class="form-control" />
+    <label>Password</label>
+    <input asp-for="Password" type="password" class="form-control" />
+    <br />
+    <button type="submit" class="btn btn-primary">Login</button>
+</form>
+
+@foreach (var e in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+{
+    <p class="text-danger">@e.ErrorMessage</p>
+}

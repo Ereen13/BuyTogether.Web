@@ -56,6 +56,8 @@ namespace BuyTogether.Data.Data
 
             // concurrency token (optional)
             builder.Entity<Product>().Property<byte[]>("RowVersion").IsRowVersion();
+
+            
         }
     }
 }
